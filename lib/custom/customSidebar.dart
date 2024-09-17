@@ -1,14 +1,11 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CustomSidebar extends StatelessWidget {
   final padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 30);
 
-  //Funcoes p/ serem chamadas nos TextButtons
   Future<void> _launchUrl() async {
     final Uri _urlFACEF = Uri.parse('https://www.unifacef.com.br/');
-    //mode: LaunchMode.externalApplication abre a url no navegador externo padrao do smartphone
     if (!await launchUrl(_urlFACEF, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $_urlFACEF');
     }
@@ -39,7 +36,6 @@ class CustomSidebar extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
-            // Coluna p/ os icones e textbuttons c/ links
             children: <Widget>[
               IconButton.filledTonal(
                 icon: const Icon(Icons.people_alt_rounded),

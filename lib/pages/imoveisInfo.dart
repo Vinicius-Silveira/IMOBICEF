@@ -1,8 +1,6 @@
-// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:imobiliaria/custom/customAppBar.dart';
-// dependencias p/ enviar msg whatsapp
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 
@@ -16,7 +14,6 @@ class ImoveisInfo extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        // ignore: sized_box_for_whitespace
         body: Container(
           width: double.maxFinite,
           height: double.maxFinite,
@@ -31,7 +28,6 @@ class ImoveisInfo extends StatelessWidget {
                       child: Image.asset(itemData["image"]),
                     ),
                     const SizedBox(height: 10),
-                    // ENDEREÇO E VALOR DO IMÓVEL
                     Center(
                       child: Column(
                         children: [
@@ -81,12 +77,10 @@ class ImoveisInfo extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Padding(
-                      // BREVE INFORMACAO DO IMOVEL
                       padding: const EdgeInsets.only(top: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // LINHA DIVISÓRIA
                           const Divider(
                             height: 3,
                             color: Colors.grey,
@@ -155,12 +149,10 @@ class ImoveisInfo extends StatelessWidget {
                         ],
                       ),
                     ),
-                    // SIZEDBOX PARA NAO ESCONDER O TEXTO ATRAS DO BOTAO "CONTATO"
                     const SizedBox(height: 100),
                   ],
                 ),
               ),
-              // BOTAO VOLTAR
               Positioned(
                 top: 5,
                 left: 5,
@@ -194,13 +186,11 @@ class ImoveisInfo extends StatelessWidget {
                   ),
                 ),
               ),
-              // BOTAO CONTATO
               Positioned(
                 bottom: 10,
                 width: size.width,
                 child: Center(
                   child: OptionButton(
-                    //recebe id do imovel selecionado
                     text: "Contato",
                     id: itemData["id"],
                     width: size.width,
@@ -216,7 +206,6 @@ class ImoveisInfo extends StatelessWidget {
   }
 }
 
-// TABS DE INFO DOS IMÓVEIS
 class InformationTile extends StatelessWidget {
   final String content;
   final String name;
@@ -228,7 +217,7 @@ class InformationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final double tileSize =
-        size.width * 0.195; // TAMANHO DAS TABS AREA DE INFO DOS IMOVEIS
+        size.width * 0.195;
     return Container(
       margin: const EdgeInsets.only(left: 30),
       child: Column(
@@ -269,7 +258,6 @@ class OptionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     const whatsappGreen = Color(0xff25D366);
 
-    // ignore: sized_box_for_whitespace
     return Container(
       width: width,
       child: Wrap(
@@ -282,7 +270,6 @@ class OptionButton extends StatelessWidget {
                 text:
                     "Olá! Tenho interesse em um imóvel! O código do imóvel é: $id",
               );
-              // ignore: deprecated_member_use
               await launch('$link');
             },
             style: ElevatedButton.styleFrom(
