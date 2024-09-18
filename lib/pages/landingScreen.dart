@@ -88,7 +88,8 @@ class _LandingScreenState extends State<LandingScreen> {
                   fontSize: 24,
                 ),
                 decoration: const InputDecoration(
-                  hintText: ' Pesquisar',
+                  hintText: ' Pesquisar por tipo de imóvel. Ex: Casa',
+                  hintStyle: TextStyle(fontSize: 18),
                   prefixText: ' ',
                   suffixIcon: Icon(
                     Icons.search,
